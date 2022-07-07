@@ -3,7 +3,7 @@
 ## Project_init: risc_cpu by 夏宇闻
 ### 设计部分
 设计需求：操作符： 
->
+
                   HLT(暂停+2)                     nop<br>
                   SKZ(为零转移+2/+4)    
                   ADD(直接寻址数+累加器+2)        （<operand>）+ Acc => Acc
