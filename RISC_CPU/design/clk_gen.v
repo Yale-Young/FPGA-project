@@ -1,5 +1,5 @@
 
-module clk_gen(clk,reset,clk1,fetch,alu_clk);
+module clk_gen(clk,reset,clk1,fetch,alu_clk);//杈撳嚭涓変釜鍛ㄦ湡锛歝lk1锛歝lk鐨勫弽鐩革紱fetch锛歝lk鐨勫叓鍒嗛锛沘lu_clk: 8鍛ㄦ湡鍐呭彧鏈変竴娆★紱
     input clk,reset;
     output clk1,fetch,alu_clk;
     wire clk;
@@ -15,15 +15,15 @@ module clk_gen(clk,reset,clk1,fetch,alu_clk);
                S8=8'b1000_0000,
              idle=8'b0000_0000;
              
-    assign clk1=~clk; //clk1反转  
+    assign clk1=~clk; //clk1路麓脳陋  
     
     always @(negedge clk)
       if(reset)
          begin
             //clk2<=0;
             //clk4<=1;
-            fetch<=0;//8分频
-            alu_clk<=0;//8周期一脉冲
+            fetch<=0;//8路脰脝碌
+            alu_clk<=0;//8脰脺脝脷脪禄脗枚鲁氓
             state<=idle;
          end
       else
