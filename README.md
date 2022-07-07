@@ -48,19 +48,20 @@ machinectl m_machinectl(.ena(contr_ena),.fetch(fetch),.rst(reset));
 
 //输入opcode和标志位zero 输出各种  指令周期：
 /**
-*  1. rd,ir_load置高：从rom读指令到指令寄存器ir 3'opcdoe 5'ir_addr
-*  2. inc_pc和rd，load_ir置高，ir_addr送至pc ，并且继续读rom的八位指令数据（低八位）'8ir_addr  获得一条完整指令
-*  3. 空操作 全置0
-*  4. 判断是否HLT？要暂停，输出hlt标志halt，inc_pc pc+1 ： 不暂停，inc_pc pc+1
-*  5. JMP: load_pc pc->ir_addr;   ADD ||AND || XOR || LDA: rd=1;   STO: data_ena=1,累加器输出;  other: 00;
-*  6. ADD||AND||XOR||LDA: load_acc,rd=1, 与累加器输出的值计算;  SKZ&&zero=1: pc+1; JMP: inc_pc 上升沿 load_pc pc->ir_addr ; STO：wr datactl 将数据写入地址处;other: 00;
-*  7. STO: datactl=1;  ADD||AND||XOR||LDA: rd=1; 空操作，持续读写数据
-*  8. SKZ&&zero=1: inc_pc pc+1;
+*  1. rd=1,load_ir=1：从rom读指令到指令寄存器ir 3'opcdoe 5'ir_addr
+*  2. inc_pc=1, rd=1，load_ir=1，pc+1，继续读rom的八位指令数据（低八位）'8ir_addr  获得一条完整指令
+*  3. nop 00
+*  4. HLT: 暂停，halt=1，inc_pc=1, pc+1; other: inc_pc=1, pc+1
+*  5. JMP: load_pc=1 ;                      ADD||AND||XOR||LDA: rd=1;               STO: datactl=1;                                                 other: 00;
+*  6. JMP: load_pc=1,inc_pc=1,pc->ir_addr;  ADD||AND||XOR||LDA: load_acc=1,rd=1;    STO：wr=1 datactl=1,->ram;   SKZ&&zero=1: inc_pc=1,pc+1;        other: 00;
+*  7.                                       ADD||AND||XOR||LDA: rd=1;               STO: datactl=1; 
+*  8.                                                                                                            SKZ&&zero=1: inc_pc=1,pc+1;
 */
 machine m_machine(.inc_pc(inc_pc),.load_acc(load_acc),.load_pc(load_pc),.rd(rd),.wr(wr),.load_ir(load_ir),.clk1(clk1),.datactl_ena(data_ena),.halt(halt),.zero(zero),.ena(contr_ena),.opcode(opcode));
 
 ```
 ![image](https://user-images.githubusercontent.com/41823230/177723406-e3e15e1c-9ad9-4fa2-b6d7-e6655300a38a.png)
+外设：addr_decode : 根据地址选通ram or rom； ram可读可写 rom仅读
 
 ### 验证部分
 
