@@ -1,4 +1,11 @@
 # FPGA-project
+    项目结构FPGA-project
+                ├─RISC_CPU
+                │  ├─design
+                │  └─verification
+                └─RISC_V_CPU
+                    ├─design
+                    └─verification
 ---
 ## Project_init: risc_cpu by 夏宇闻
 ### 设计部分
@@ -65,3 +72,5 @@ machine m_machine(.inc_pc(inc_pc),.load_acc(load_acc),.load_pc(load_pc),.rd(rd),
 
 ### 验证部分
 
+
+## Project_rv: tiny_risc_v_cpu by [liangkangnan](https://gitee.com/liangkangnan/tinyriscv)
