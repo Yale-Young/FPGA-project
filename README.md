@@ -74,3 +74,16 @@ machine m_machine(.inc_pc(inc_pc),.load_acc(load_acc),.load_pc(load_pc),.rd(rd),
 
 
 ## Project_rv: tiny_risc_v_cpu by [liangkangnan](https://gitee.com/liangkangnan/tinyriscv)
+
+### 设计部分
+设计需求：三级流水线，即取指，译码，执行，支持RV32IM指令集等
+RV32I指令：
+          R: func-7      rs2-5 rs1-5 func-3  rd-5         opcode-7  寄存器
+          I: imm-12            rs1-5 func-3  rd-5         opcode-7  短立即数
+          S: imm-7       rs2-5 rs1-5 func-3  imm-5        opcode-7  内存
+          B: imm-1 imm-6 rs2-5 rs1-5 func-3  imm-4 imm-1  opcode-7  条件跳转
+          U: imm-20                          rd-5         opcode-7  高位立即数
+          J: imm-1 imm-10 imm-1 imm-8        rd-5         opcode-7  无条件跳转
+          
+
+### 验证部分
