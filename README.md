@@ -77,11 +77,11 @@ machine m_machine(.inc_pc(inc_pc),.load_acc(load_acc),.load_pc(load_pc),.rd(rd),
 ## Project_rv: tiny_risc_v_cpu by [liangkangnan](https://gitee.com/liangkangnan/tinyriscv)
 
 ### 设计部分
-设计需求：三级流水线，即取指，译码，执行，支持RV32IM指令集等  参见 [rv手册](http://riscvbook.com/chinese/RISC-V-Reader-Chinese-v2p1.pdf)
+设计需求：三级流水线，即取指，译码，执行，支持RV32IM指令集等  rv内容参见 [rv中文手册](http://riscvbook.com/chinese/RISC-V-Reader-Chinese-v2p1.pdf)
 ```
           32bits RV32I基础整数指令集(47条) 扩展硬件乘法器：(R) : mul mulh mulhsu mulhu div divu rem remu
           R: func-7      rs2-5 rs1-5 func-3  rd-5         opcode-7  寄存器-寄存器操作   add sub sll slt sltu xor srl sra or and 
-          I: imm-12            rs1-5 func-3  rd-5         opcode-7  短立即数和访存load  lb lh lw lbu lhu addi slti sltiu xori ori andi fence fence.i ecall ebreak csrrw csrrs csrrc csrrwi cssrrsi csrrci
+          I: imm-12            rs1-5 func-3  rd-5         opcode-7  短立即数计算和访存load  lb lh lw lbu lhu addi slti sltiu xori ori andi fence fence.i ecall ebreak csrrw csrrs csrrc csrrwi cssrrsi csrrci
           S: imm-7       rs2-5 rs1-5 func-3  imm-5        opcode-7  访存store           sb sh sw 
           B: imm-1 imm-6 rs2-5 rs1-5 func-3  imm-4 imm-1  opcode-7  条件跳转            beq bne blt bge bltu bgeu
           U: imm-20                          rd-5         opcode-7  长立即数            lui auipc
@@ -118,27 +118,39 @@ module tinyriscv(
     // 控制模块: 发出跳转、暂停流水线信号 优先级：jump | exhold | clinthold 暂停流水线 -> ribhold暂停pc -> jtag 暂停流水线
     ctrl u_ctrl(.rst(rst),.jump_flag_i(ex_jump_flag_o),.jump_addr_i(ex_jump_addr_o),.hold_flag_ex_i(ex_hold_flag_o),.hold_flag_rib_i(rib_hold_flag_i),.hold_flag_o(ctrl_hold_flag_o),.hold_flag_clint_i(clint_hold_flag_o),.jump_flag_o(ctrl_jump_flag_o),.jump_addr_o(ctrl_jump_addr_o),.jtag_halt_flag_i(jtag_halt_flag_i));
 
-    // 寄存器操作: 原子写r1,r2  并行读r1,r2
+    // 通用r1r2寄存器读写操作: 原子写r1,r2  并行读r1,r2 优先级 ex -> jtag
     regs u_regs(.clk(clk),.rst(rst),.we_i(ex_reg_we_o),.waddr_i(ex_reg_waddr_o),.wdata_i(ex_reg_wdata_o),.raddr1_i(id_reg1_raddr_o),.rdata1_o(regs_rdata1_o),.raddr2_i(id_reg2_raddr_o),.rdata2_o(regs_rdata2_o),.jtag_we_i(jtag_reg_we_i),.jtag_addr_i(jtag_reg_addr_i),.jtag_data_i(jtag_reg_data_i),.jtag_data_o(jtag_reg_data_o)
 );
 
-    // csr_reg模块例化
+    // 状态控制寄存器：读写 优先级 ex -> clint 
     csr_reg u_csr_reg(.clk(clk),.rst(rst),.we_i(ex_csr_we_o),.raddr_i(id_csr_raddr_o),.waddr_i(ex_csr_waddr_o),.data_i(ex_csr_wdata_o),.data_o(csr_data_o),.global_int_en_o(csr_global_int_en_o),.clint_we_i(clint_we_o),.clint_raddr_i(clint_raddr_o),.clint_waddr_i(clint_waddr_o),.clint_data_i(clint_data_o),.clint_data_o(csr_clint_data_o),.clint_csr_mtvec(csr_clint_csr_mtvec),.clint_csr_mepc(csr_clint_csr_mepc),.clint_csr_mstatus(csr_clint_csr_mstatus));
 
-    // if_id模块例化
+    // 传递指令给译码器：包括指令地址和指令内容
     if_id u_if_id(.clk(clk),.rst(rst),.inst_i(rib_pc_data_i),.inst_addr_i(pc_pc_o),.int_flag_i(int_i),.int_flag_o(if_int_flag_o),.hold_flag_i(ctrl_hold_flag_o),.inst_o(if_inst_o),.inst_addr_o(if_inst_addr_o)
 );
 
-    // 指令解码器
+    // 指令解码器：传入指令地址32和内容32 寄存器1&2&csr的数据 根据后七位判断指令类型 输出寄存器操作 除以下特殊指令,均 读写地址置零 写标志置零
+    INST_TYPE_I   : 0010011  func3 ：[立即数&rs1加、比较、异或、与、移位]addi slti sltiu xori ori andi slli sri 获取操作数(符号位扩展) 设置读rs1和写rd: o
+    INST_TYPE_R_M : 0110011  func7 ：R/M func3 : [rs1&rs2加、比较、异或、与、移位]add_sub sll slt sltu xor sr or and 获取操作数 设置读rs1&2和写rd: o / func3 : [rs1&2乘、高位乘、有无符号乘]mul mulhu mulh mulhsu 获取操作数 设置读rs1&2和写rd：[rs1&2除法、无符号除法、求余、无符号余]div divu rem remu 获取操作数 设置读rs1&2和写rd: o
+    INST_TYPE_L   : 0000011  func3 : [字节、半字、字加载offset & rs1]lb lh lw lbu lhu 获取操作数(符号位扩展) 设置读rs1和写rd:o
+    INST_TYPE_S   : 0100011  func3 : [存rs2字节、字、半字至内存地址rs1+offset]sb sw sh 获取操作数off rs1 设置读rs1&2:o
+    INST_TYPE_B   : 1100011  func3 : [r1r2相等、不等、小于、大于时pc分支offset]beq bne blt bge bltu bgeu 获取操作数rs1&2 跳转操作数pcaddr-off 设置读rs1&2:o 
+    INST_JAL      : 1101111  跳转并链接 rd off ；x[rd] = pc+4; pc += sext(offset) 暂存下条指令，并跳转offset  获取操作数pc 4 跳转操作数pc off 写rd 
+    INST_JALR     : 1100111  跳转并寄存器链接 t =pc+4; pc=(x[rs1]+sext(offset))&~1; x[rd]=t 暂存下条指令，并跳转offset 获取操作数pc 4 跳转rs1 off 写rd
+    INST_LUI      : 0110111  高位立即数加载 x[rd] = sext(immediate[31:12] << 12) 操作数 {inst_i[31:12], 12'b0} 写入rd
+    INST_AUIPC    : 0010111  PC加立即数 x[rd] = pc + sext(immediate[31:12] << 12)  操作数 pc {inst_i[31:12], 12'b0} 写入rd
+    INST_NOP_OP   : 0000001  空 同默认
+    INST_FENCE    : 0001111  同步内存和 I/O  跳转操作数pc 4
+    INST_CSR      : 1110011  func3 : [读后写、读后置位(CSRs[csr] | x[rs1])、读后清除控制状态寄存器]csrrw csrrs crsrc 设置读rs1 写rd csr可写: csrrwi csrrsi csrrci 写rd csr可写:o
     id u_id(.rst(rst),.inst_i(if_inst_o),.inst_addr_i(if_inst_addr_o),.reg1_rdata_i(regs_rdata1_o),.reg2_rdata_i(regs_rdata2_o),.ex_jump_flag_i(ex_jump_flag_o),.reg1_raddr_o(id_reg1_raddr_o),.reg2_raddr_o(id_reg2_raddr_o),.inst_o(id_inst_o),.inst_addr_o(id_inst_addr_o),.reg1_rdata_o(id_reg1_rdata_o),.reg2_rdata_o(id_reg2_rdata_o),.reg_we_o(id_reg_we_o),.reg_waddr_o(id_reg_waddr_o),.op1_o(id_op1_o),.op2_o(id_op2_o),.op1_jump_o(id_op1_jump_o),.op2_jump_o(id_op2_jump_o),.csr_rdata_i(csr_data_o),.csr_raddr_o(id_csr_raddr_o),.csr_we_o(id_csr_we_o),.csr_rdata_o(id_csr_rdata_o),.csr_waddr_o(id_csr_waddr_o));
 
-    // id_ex模块例化
+    // 从译码器传参给执行器
     id_ex u_id_ex(.clk(clk),.rst(rst),.inst_i(id_inst_o),.inst_addr_i(id_inst_addr_o),.reg_we_i(id_reg_we_o),.reg_waddr_i(id_reg_waddr_o),.reg1_rdata_i(id_reg1_rdata_o),.reg2_rdata_i(id_reg2_rdata_o),.hold_flag_i(ctrl_hold_flag_o),.inst_o(ie_inst_o),.inst_addr_o(ie_inst_addr_o),.reg_we_o(ie_reg_we_o),.reg_waddr_o(ie_reg_waddr_o),.reg1_rdata_o(ie_reg1_rdata_o),.reg2_rdata_o(ie_reg2_rdata_o),.op1_i(id_op1_o),.op2_i(id_op2_o),.op1_jump_i(id_op1_jump_o),.op2_jump_i(id_op2_jump_o),.op1_o(ie_op1_o),.op2_o(ie_op2_o),.op1_jump_o(ie_op1_jump_o),.op2_jump_o(ie_op2_jump_o),.csr_we_i(id_csr_we_o),.csr_waddr_i(id_csr_waddr_o),.csr_rdata_i(id_csr_rdata_o),.csr_we_o(ie_csr_we_o),.csr_waddr_o(ie_csr_waddr_o),.csr_rdata_o(ie_csr_rdata_o));
 
-    // ex模块例化
+    // 执行！
     ex u_ex(.rst(rst),.inst_i(ie_inst_o),.inst_addr_i(ie_inst_addr_o),.reg_we_i(ie_reg_we_o),.reg_waddr_i(ie_reg_waddr_o),.reg1_rdata_i(ie_reg1_rdata_o),.reg2_rdata_i(ie_reg2_rdata_o),.op1_i(ie_op1_o),.op2_i(ie_op2_o),.op1_jump_i(ie_op1_jump_o),.op2_jump_i(ie_op2_jump_o),.mem_rdata_i(rib_ex_data_i),.mem_wdata_o(ex_mem_wdata_o),.mem_raddr_o(ex_mem_raddr_o),.mem_waddr_o(ex_mem_waddr_o),.mem_we_o(ex_mem_we_o).mem_req_o(ex_mem_req_o),.reg_wdata_o(ex_reg_wdata_o),.reg_we_o(ex_reg_we_o),.reg_waddr_o(ex_reg_waddr_o),.hold_flag_o(ex_hold_flag_o),.jump_flag_o(ex_jump_flag_o),.jump_addr_o(ex_jump_addr_o),.int_assert_i(clint_int_assert_o),.int_addr_i(clint_int_addr_o),.div_ready_i(div_ready_o),.div_result_i(div_result_o),.div_busy_i(div_busy_o),.div_reg_waddr_i(div_reg_waddr_o),.div_start_o(ex_div_start_o),.div_dividend_o(ex_div_dividend_o),.div_divisor_o(ex_div_divisor_o),.div_op_o(ex_div_op_o),.div_reg_waddr_o(ex_div_reg_waddr_o),.csr_we_i(ie_csr_we_o),.csr_waddr_i(ie_csr_waddr_o),.csr_rdata_i(ie_csr_rdata_o),.csr_wdata_o(ex_csr_wdata_o),.csr_we_o(ex_csr_we_o),.csr_waddr_o(ex_csr_waddr_o));
 
-    // div模块例化
+    // 除法器
     div u_div(.clk(clk),.rst(rst),.dividend_i(ex_div_dividend_o),.divisor_i(ex_div_divisor_o),.start_i(ex_div_start_o),.op_i(ex_div_op_o),.reg_waddr_i(ex_div_reg_waddr_o),.result_o(div_result_o),.ready_o(div_ready_o),.busy_o(div_busy_o),.reg_waddr_o(div_reg_waddr_o));
 
     // clint模块例化
