@@ -1,11 +1,20 @@
 # FPGA-project
     项目结构FPGA-project
+                ├─mcdf
                 ├─RISC_CPU
                 │  ├─design
                 │  └─verification
-                └─RISC_V_CPU
+                ├─RISC_V_CPU
+                │  ├─design
+                │  │  ├─core
+                │  │  ├─debug
+                │  │  ├─perips
+                │  │  ├─soc
+                │  │  └─utils
+                │  └─verification
+                └─SIFT_Sobel
                     ├─design
-                    └─verification
+                    └─result
 ---
 ## Project_init: risc_cpu by 夏宇闻
 ### 设计部分
