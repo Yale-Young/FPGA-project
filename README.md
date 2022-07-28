@@ -240,7 +240,16 @@ tinyriscv_soc_top.v 结构分析
 
 
 ### 验证部分
+#### core部分
+##### pc寄存器 
+测试1500条指令，验证了暂停，跳转，和pc+4的功能   
+编译指令：make comp  仿真： ./simv -gui 查看覆盖率：make cov    
+代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181457407-6f0ba203-851e-48e1-b192-470741600fcd.png)
+条件覆盖率为2/3是一条|语句未完全判断   
+功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181457512-4f16c88f-fdc1-4e64-82c8-293ece9af197.png)
+rst，jump，hold，inst addr 均为100%；   
 
+#### bus部分
 
 
 
