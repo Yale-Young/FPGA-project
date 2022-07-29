@@ -248,6 +248,13 @@ tinyriscv_soc_top.v 结构分析
 条件覆盖率为2/3是一条|语句未完全判断   
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181457512-4f16c88f-fdc1-4e64-82c8-293ece9af197.png)
 rst，jump，hold，inst addr 均为100%；   
+#### regs 通用寄存器
+测试了优先级判断，寄存器读写（含零寄存器5'b0），jtag的寄存器读写操作     
+结果比较方法：`result = (get_actual.jdata===tmp_tran.jdata)&&(get_actual.data===tmp_tran.data);//包含不定态，要用===`    
+测试结果： ` Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
+代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703091-bf25ec7c-761f-4cbc-8db5-5bb461f02319.png)
+功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
+
 
 #### bus部分
 
