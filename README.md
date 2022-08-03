@@ -202,7 +202,7 @@ tinyriscv_soc_top.v 结构分析
     // spi模块例化
     spi spi_0(.clk(clk),.rst(rst),.data_i(s5_data_o),.addr_i(s5_addr_o),.we_i(s5_we_o),.data_o(s5_data_i),.spi_mosi(spi_mosi),.spi_miso(spi_miso),.spi_ss(spi_ss),.spi_clk(spi_clk));
 
-    // RISC-V Internal Bus
+    // RISC-V Internal Bus 使用case根据优先级连接输入输出端口
     rib u_rib(.clk(clk),.rst(rst),
 
         // master 0 interface
