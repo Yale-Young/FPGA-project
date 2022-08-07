@@ -261,7 +261,11 @@ rst，jump，hold，inst addr 均为100%；
 测试结果： ` Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
 代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703091-bf25ec7c-761f-4cbc-8db5-5bb461f02319.png)
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
+##### tiny_cpu
+只测试指令执行和pc跳转功能 有两种思路：    
+1.在transaction中生成随机指令
 
+2.搭建随机指令生成平台，生成大量随机指令并保存在bin文件中，再读取文件作为指令
 
 #### bus部分
 ##### rib总线
