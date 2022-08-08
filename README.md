@@ -255,12 +255,15 @@ rst，jump，hold，inst addr 均为100%；
 代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703091-bf25ec7c-761f-4cbc-8db5-5bb461f02319.png)
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
 ##### tiny_cpu
-@@ -268,6 +268,14 @@ rst，jump，hold，inst addr 均为100%；
+只测试指令执行和pc跳转功能 有两种思路：    
+
+1.在transaction中直接生成随机指令      
+会生成大量非法指令，很难达到覆盖率要求，例如使用15000条随机指令，代码覆盖率仅有60%，状态机覆盖率更是只有35%，所以有必要开发一个随机指令合法生成平台    
 ![image](https://user-images.githubusercontent.com/41823230/183327205-f30a2a0d-5ee2-4a75-a484-a86c5466f040.png)
 
 2.搭建随机指令生成平台
 使用instr_gen平台生成可配置的指令流，包括RV32im全部55条指令，可配置各种指令的占比。     
-使用指令生成平台控制指令，仅产生1500条指令便可达到很高的覆盖率(各指令权重均为1)：    
+使用指令生成平台控制指令，仅产生1500条指令便可达到很高的覆盖率(各指令权重均为1)，图中clint覆盖率较低是因为未考虑各种中断，而非指令不全：    
 ![image](https://user-images.githubusercontent.com/41823230/183412675-306e3ea0-17c3-4356-a007-36dc32dbd996.png)
 ![image](https://user-images.githubusercontent.com/41823230/183412741-4b408ed2-fb06-4381-9f78-b77e2cd43923.png)
 仅测试add指令：   
