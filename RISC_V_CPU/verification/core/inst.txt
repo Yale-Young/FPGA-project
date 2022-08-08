@@ -1,0 +1,76 @@
+32bits RV32I基础整数指令集(47条) 扩展硬件乘法器：(R) : mul mulh mulhsu mulhu div divu rem remu
+R: 寄存器-寄存器操作   add sub sll slt sltu xor srl sra or and 
+    格式： func-7      rs2-5 rs1-5 func-3  rd-5         opcode-7  
+      0000000 rs2 rs1 000 rd 0110011 R add rd.rs1,rs2                   x[rd] = x[rs1] + x[rs2] 
+      0100000 rs2 rs1 000 rd 0110011 R sub rd, rs1, rs2                 x[rd] = x[rs1] − x[rs2] 
+      0000000 rs2 rs1 001 rd 0110011 R sll rd, rs1, rs2                 x[rd] = x[rs1] ≪ x[rs2] 
+      0000000 rs2 rs1 010 rd 0110011 R slt rd, rs1, rs2                 x[rd] = (x[rs1] < x[rs2]) signed
+      0000000 rs2 rs1 011 rd 0110011 R sltu rd, rs1, rs2                x[rd] = (x[rs1] < x[rs2]) unsigned
+      0000000 rs2 rs1 100 rd 0110011 R xor rd, rs1, rs2                 x[rd] = x[rs1]  ^  x[rs2] 
+      0000000 rs2 rs1 101 rd 0110011 R srl rd, rs1, rs2                 x[rd] = (x[rs1] ≫ x[rs2]) unsigned
+      0100000 rs2 rs1 101 rd 0110011 R sra rd, rs1, rs2                 x[rd] = (x[rs1] ≫ x[rs2]) signed 
+      0000000 rs2 rs1 110 rd 0110011 R or rd, rs1, rs2                  x[rd] = x[rs1] | x[rs2]
+      0000000 rs2 rs1 111 rd 0110011 R and rd, rs1, rs2                 x[rd] = x[rs1] & x[rs2] 
+      0000001 rs2 rs1 000 rd 0110011 R mul rd, rs1, rs2                 x[rd] = x[rs1] × x[rs2] 
+      0000001 rs2 rs1 001 rd 0110011 R mulh rd, rs1, rs2                x[rd] = (x[rs1] × x[rs2]) ≫ XLEN signed
+      0000001 rs2 rs1 010 rd 0110011 R mulhsu rd, rs1, rs2              x[rd] = (x[rs1] × x[rs2]) ≫ XLEN signed-unsigned 
+      0000001 rs2 rs1 011 rd 0110011 R mulhu rd, rs1, rs2               x[rd] = (x[rs1] × x[rs2]) ≫ XLEN unsigned
+      0000001 rs2 rs1 100 rd 0110011 R div rd, rs1, rs2                 x[rd] = x[rs1] ÷ x[rs2] signed
+      0000001 rs2 rs1 101 rd 0110011 R divu rd, rs1, rs2                x[rd] = x[rs1] ÷ x[rs2] unsigned
+      0000001 rs2 rs1 110 rd 0110011 R rem rd, rs1, rs2                 x[rd] = x[rs1] % x[rs2] signed
+      0000001 rs2 rs1 111 rd 0110011 R remu rd, rs1, rs2                x[rd] = x[rs1] % x[rs2] unsigned
+
+I: 短立即数计算和访存load  lb lh lw lbu lhu addi slti sltiu xori ori andi fence fence.i ecall ebreak csrrw csrrs csrrc csrrwi cssrrsi csrrci
+    格式： imm-12    rs1-5 func-3  rd-5   opcode-7  
+      imm[11:0]       rs1  000  rd   0000011 I lb rd, offset(rs1)       x[rd] = sext(M[x[rs1] + sext(offset)][7:0])
+      imm[11:0]       rs1  001  rd   0000011 I lh rd, offset(rs1)       x[rd] = sext(M[x[rs1] + sext(offset)][15:0]) 
+      imm[11:0]       rs1  010  rd   0000011 I lw rd, offset(rs1)       x[rd] = sext(M[x[rs1] + sext(offset)][31:0]) 
+      imm[11:0]       rs1  100  rd   0000011 I lbu rd, offset(rs1)      x[rd] = M[x[rs1] + sext(offset)][7:0] 
+      imm[11:0]       rs1  101  rd   0000011 I lhu rd, offset(rs1)      x[rd] = M[x[rs1] + sext(offset)][15:0] 
+      imm[11:0]       rs1  000  rd   0010011 I addi rd, rs1, immediate  x[rd] = x[rs1] + sext(immediate) 
+      imm[11:0]       rs1  010  rd   0010011 I slti rd, rs1, immediate  x[rd] = (x[rs1] < sext(immediate))
+      imm[11:0]       rs1  011  rd   0010011 I sltiu rd, rs1, immediate x[rd] = (x[rs1] < sext(immediate)) 
+      imm[11:0]       rs1  100  rd   0010011 I xori rd, rs1, immediate  x[rd] = x[rs1]  ^  sext(immediate) 
+      imm[11:0]       rs1  110  rd   0010011 I ori rd, rs1, immediate   x[rd] = x[rs1] | sext(immediate)
+      imm[11:0]       rs1  111  rd   0010011 I andi rd, rs1, immediate  x[rd] = x[rs1] & sext(immediate) 
+      0000000   shamt rs1  001  rd   0010011 I slli rd, rs1, shamt      x[rd] = x[rs1] ≪ shamt 
+      0000000   shamt rs1  101  rd   0010011 I srli rd, rs1, shamt      x[rd] = (x[rs1] ≫ shamt) unsigned
+      0100000   shamt rs1  101  rd   0010011 I srai rd, rs1, shamt      x[rd] = (x[rs1] ≫ shamt) signed
+      0000 pred succ 00000 000 00000 0001111 I fence pred, succ         Fence(pred, succ) 
+      0000 0000 0000 00000 001 00000 0001111 I fence.i                  Fence(Store, Fetch) 
+      000000000000   00000 000 00000 1110011 I ecall    Environment Call
+      000000000000   00000 000 00000 1110011 I ebreak   Environment Breakpoint
+          csr         rs1  001  rd   1110011 I csrrw rd, csr, zimm[4:0]       t = CSRs[csr]; CSRs[csr] = x[rs1]; x[rd] = t 
+          csr         rs1  010  rd   1110011 I csrrs rd, csr, rs1             t = CSRs[csr]; CSRs[csr] = t | x[rs1]; x[rd] = t 
+          csr         rs1  011  rd   1110011 I csrrc rd, csr, rs1             t = CSRs[csr]; CSRs[csr] = t &~x[rs1]; x[rd] = t 
+          csr        zimm  101  rd   1110011 I csrrwi rd, csr, zimm[4:0]      x[rd] = CSRs[csr]; CSRs[csr] = zimm
+          csr        zimm  110  rd   1110011 I csrrsi 
+          csr        zimm  111  rd   1110011 I csrrci rd, csr, zimm[4:0]      t = CSRs[csr]; CSRs[csr] = t &~zimm; x[rd] = t 
+
+S: 访存store           sb sh sw 
+    格式： imm-7       rs2-5 rs1-5 func-3  imm-5        opcode-7 
+      imm[11:5] rs2 rs1 000 imm[4:0] 0100011 S sb rs2, offset(rs1)                              M[x[rs1] + sext(offset) = x[rs2][7: 0]  
+      imm[11:5] rs2 rs1 001 imm[4:0] 0100011 S sh rs2, offset(rs1)                              M[x[rs1] + sext(offset) = x[rs2][15: 0]
+      imm[11:5] rs2 rs1 010 imm[4:0] 0100011 S sw rs2, offset(rs1)                              M[x[rs1] + sext(offset) = x[rs2][31: 0] 
+
+B: 条件跳转            beq bne blt bge bltu bgeu
+    格式： imm-1 imm-6 rs2-5 rs1-5 func-3  imm-4 imm-1  opcode-7  
+      imm[12|10:5] rs2 rs1 000 imm[4:1|11] 1100011 B beq rs1, rs2, offset              if (rs1 == rs2) pc += sext(offset) 
+      imm[12|10:5] rs2 rs1 001 imm[4:1|11] 1100011 B bne rs1, rs2, offset              if (rs1 ≠ rs2) pc += sext(offset) 
+      imm[12|10:5] rs2 rs1 100 imm[4:1|11] 1100011 B blt rs1, rs2, offset              if (rs1 < rs2) pc += sext(offset) 
+      imm[12|10:5] rs2 rs1 101 imm[4:1|11] 1100011 B bge rs1, rs2, offset              if (rs1 ≥ rs2) pc += sext(offset) 
+      imm[12|10:5] rs2 rs1 110 imm[4:1|11] 1100011 B bltu rs1, rs2, offset             if (rs1 <u rs2) pc += sext(offset) 
+      imm[12|10:5] rs2 rs1 111 imm[4:1|11] 1100011 B bgeu rs1, rs2, offset             if (rs1 ≥u rs2) pc += sext(offset) 
+          
+U: 长立即数            lui auipc
+    格式： imm-20                          rd-5         opcode-7  
+      imm[31:12] rd 0110111 U lui rd, immediate                          x[rd] = sext(immediate[31:12] << 12) 
+      imm[31:12] rd 0010111 U auipc rd, immediate         x[rd] = pc + sext(immediate[31:12] << 12) 
+
+J: 无条件跳转          jal jalr
+    格式： imm-1 imm-10 imm-1 imm-8        rd-5         opcode-7  
+      imm[20|10:1|11|19:12] rd 1101111 J jal rd, offset                          x[rd] = pc+4; pc += sext(offset) 
+      imm[11:0]     rs1 000 rd 1100111 I jalr rd, offset(rs1)                    t =pc+4; pc=(x[rs1]+sext(offset))&~1; x[rd]=t 
+      nop 32'h00000001
+      mret 32'h30200073
+      ret 32'h00008067

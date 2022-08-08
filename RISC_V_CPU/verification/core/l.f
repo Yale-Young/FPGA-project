@@ -1,0 +1,17 @@
+./if_id.v
+./defines.v
+./csr_reg.v
+./div.v
+./full_handshake_rx.v
+./full_handshake_tx.v
+./ctrl.v
+./gen_buf.v
+./id.v
+./rib.v
+./ex.v
+./id_ex.v
+./tinyriscv.v
+./pc_reg.v
+./clint.v
+./gen_dff.v
+./regs.v

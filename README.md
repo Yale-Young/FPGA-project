@@ -121,22 +121,20 @@ module tinyriscv(
     );
 
 
-    // pc寄存器: 重置->`CpuResetAddr | jump: pc-> jump_addr_i | hold: pc->pc | else : pc + 4 按字节取址
+    // pc寄存器: 重置->`CpuResetAddr | jump: pc-> jump_addr_i | hold: pc->pc | else : pc + 4
     pc_reg u_pc_reg(.clk(clk),.rst(rst),.jtag_reset_flag_i(jtag_reset_flag_i),.pc_o(pc_pc_o),.hold_flag_i(ctrl_hold_flag_o),.jump_flag_i(ctrl_jump_flag_o),.jump_addr_i(ctrl_jump_addr_o));
 
     // 控制模块: 发出跳转、暂停流水线信号 优先级：jump | exhold | clinthold 暂停流水线 -> ribhold暂停pc -> jtag 暂停流水线
     ctrl u_ctrl(.rst(rst),.jump_flag_i(ex_jump_flag_o),.jump_addr_i(ex_jump_addr_o),.hold_flag_ex_i(ex_hold_flag_o),.hold_flag_rib_i(rib_hold_flag_i),.hold_flag_o(ctrl_hold_flag_o),.hold_flag_clint_i(clint_hold_flag_o),.jump_flag_o(ctrl_jump_flag_o),.jump_addr_o(ctrl_jump_addr_o),.jtag_halt_flag_i(jtag_halt_flag_i));
 
-    // 通用r1r2寄存器读写操作: 原子写r1,r2  并行读r1,r2 优先级 ex -> jtag 输出寄存器值
+    // 通用r1r2寄存器读写操作: 原子写r1,r2  并行读r1,r2 优先级 ex -> jtag
     regs u_regs(.clk(clk),.rst(rst),.we_i(ex_reg_we_o),.waddr_i(ex_reg_waddr_o),.wdata_i(ex_reg_wdata_o),.raddr1_i(id_reg1_raddr_o),.rdata1_o(regs_rdata1_o),.raddr2_i(id_reg2_raddr_o),.rdata2_o(regs_rdata2_o),.jtag_we_i(jtag_reg_we_i),.jtag_addr_i(jtag_reg_addr_i),.jtag_data_i(jtag_reg_data_i),.jtag_data_o(jtag_reg_data_o)
 );
 
-    // 状态控制寄存器：读写 优先级 ex -> clint 从ex和中断clint获得读写寄存器地址和数据 再输出全局中断等   
-    状态寄存器包括：mtvec（保存发生异常时处理器需要跳转到的地址），mcause（指示发生异常的种类），mepc（指向发生异常的指令），mie（指出处理器目前能处理和必须忽略的中断），mstatus（保存全局中断使能，以及许多其他的状态），mscratch（暂时存放一个字大小的数据）;
-    优先ex写入状态，然后clint，读为并行读；
+    // 状态控制寄存器：读写 优先级 ex -> clint 
     csr_reg u_csr_reg(.clk(clk),.rst(rst),.we_i(ex_csr_we_o),.raddr_i(id_csr_raddr_o),.waddr_i(ex_csr_waddr_o),.data_i(ex_csr_wdata_o),.data_o(csr_data_o),.global_int_en_o(csr_global_int_en_o),.clint_we_i(clint_we_o),.clint_raddr_i(clint_raddr_o),.clint_waddr_i(clint_waddr_o),.clint_data_i(clint_data_o),.clint_data_o(csr_clint_data_o),.clint_csr_mtvec(csr_clint_csr_mtvec),.clint_csr_mepc(csr_clint_csr_mepc),.clint_csr_mstatus(csr_clint_csr_mstatus));
 
-    // 传递指令给译码器：包括指令地址和指令内容 外设中断信号
+    // 传递指令给译码器：包括指令地址和指令内容
     if_id u_if_id(.clk(clk),.rst(rst),.inst_i(rib_pc_data_i),.inst_addr_i(pc_pc_o),.int_flag_i(int_i),.int_flag_o(if_int_flag_o),.hold_flag_i(ctrl_hold_flag_o),.inst_o(if_inst_o),.inst_addr_o(if_inst_addr_o)
 );
 
@@ -159,17 +157,12 @@ module tinyriscv(
     id_ex u_id_ex(.clk(clk),.rst(rst),.inst_i(id_inst_o),.inst_addr_i(id_inst_addr_o),.reg_we_i(id_reg_we_o),.reg_waddr_i(id_reg_waddr_o),.reg1_rdata_i(id_reg1_rdata_o),.reg2_rdata_i(id_reg2_rdata_o),.hold_flag_i(ctrl_hold_flag_o),.inst_o(ie_inst_o),.inst_addr_o(ie_inst_addr_o),.reg_we_o(ie_reg_we_o),.reg_waddr_o(ie_reg_waddr_o),.reg1_rdata_o(ie_reg1_rdata_o),.reg2_rdata_o(ie_reg2_rdata_o),.op1_i(id_op1_o),.op2_i(id_op2_o),.op1_jump_i(id_op1_jump_o),.op2_jump_i(id_op2_jump_o),.op1_o(ie_op1_o),.op2_o(ie_op2_o),.op1_jump_o(ie_op1_jump_o),.op2_jump_o(ie_op2_jump_o),.csr_we_i(id_csr_we_o),.csr_waddr_i(id_csr_waddr_o),.csr_rdata_i(id_csr_rdata_o),.csr_we_o(ie_csr_we_o),.csr_waddr_o(ie_csr_waddr_o),.csr_rdata_o(ie_csr_rdata_o));
 
     // 执行！根据指令 与内存 除法器 通用寄存器 csr寄存器 控制器交互
-    1.指令分解 数据预处理 sr移位 操作数计算 乘法运算temp
-    2.处理乘法:计算操作数  除法指令：控制start busy 等与除法器交互
-    3.执行 
     ex u_ex(.rst(rst),.inst_i(ie_inst_o),.inst_addr_i(ie_inst_addr_o),.reg_we_i(ie_reg_we_o),.reg_waddr_i(ie_reg_waddr_o),.reg1_rdata_i(ie_reg1_rdata_o),.reg2_rdata_i(ie_reg2_rdata_o),.op1_i(ie_op1_o),.op2_i(ie_op2_o),.op1_jump_i(ie_op1_jump_o),.op2_jump_i(ie_op2_jump_o),.mem_rdata_i(rib_ex_data_i),.mem_wdata_o(ex_mem_wdata_o),.mem_raddr_o(ex_mem_raddr_o),.mem_waddr_o(ex_mem_waddr_o),.mem_we_o(ex_mem_we_o).mem_req_o(ex_mem_req_o),.reg_wdata_o(ex_reg_wdata_o),.reg_we_o(ex_reg_we_o),.reg_waddr_o(ex_reg_waddr_o),.hold_flag_o(ex_hold_flag_o),.jump_flag_o(ex_jump_flag_o),.jump_addr_o(ex_jump_addr_o),.int_assert_i(clint_int_assert_o),.int_addr_i(clint_int_addr_o),.div_ready_i(div_ready_o),.div_result_i(div_result_o),.div_busy_i(div_busy_o),.div_reg_waddr_i(div_reg_waddr_o),.div_start_o(ex_div_start_o),.div_dividend_o(ex_div_dividend_o),.div_divisor_o(ex_div_divisor_o),.div_op_o(ex_div_op_o),.div_reg_waddr_o(ex_div_reg_waddr_o),.csr_we_i(ie_csr_we_o),.csr_waddr_i(ie_csr_waddr_o),.csr_rdata_i(ie_csr_rdata_o),.csr_wdata_o(ex_csr_wdata_o),.csr_we_o(ex_csr_we_o),.csr_waddr_o(ex_csr_waddr_o));
 
-    // 除法器 试商法实现32位整数除法 每次除法运算至少需要33个时钟周期才能完成 输入start 输出busy/ready 四个状态 idle start calc end
+    // 除法器
     div u_div(.clk(clk),.rst(rst),.dividend_i(ex_div_dividend_o),.divisor_i(ex_div_divisor_o),.start_i(ex_div_start_o),.op_i(ex_div_op_o),.reg_waddr_i(ex_div_reg_waddr_o),.result_o(div_result_o),.ready_o(div_ready_o),.busy_o(div_busy_o),.reg_waddr_o(div_reg_waddr_o));
 
-    // clint 核心中断控制 输入 : 中断输入信号 指令 跳转 除法器开始信号 流水线暂停信号  状态寄存器状态 全局中断  输出：中断标志和入口地址 流水线暂停标志 读写状态寄存器
-    双状态机  中断状态 Idle  SYNC_ASSERT同步中断 ASYNC_ASSERT异步中断  MRET  寄存器写状态： 将mepc寄存器的值设为当前指令地址，写中断产生的原因，关闭全局中断，中断返回
-    执行阶段的指令为除法指令，则先不处理同步中断，等除法指令执行完再处理
+    // clint模块例化
     clint u_clint(.clk(clk),.rst(rst),.int_flag_i(if_int_flag_o),.inst_i(id_inst_o),.inst_addr_i(id_inst_addr_o),.jump_flag_i(ex_jump_flag_o),.jump_addr_i(ex_jump_addr_o),.hold_flag_i(ctrl_hold_flag_o),.div_started_i(ex_div_start_o),.data_i(csr_clint_data_o),.csr_mtvec(csr_clint_csr_mtvec),.csr_mepc(csr_clint_csr_mepc),.csr_mstatus(csr_clint_csr_mstatus),.we_o(clint_we_o),.waddr_o(clint_waddr_o),.raddr_o(clint_raddr_o),.data_o(clint_data_o),.hold_flag_o(clint_hold_flag_o),.global_int_en_i(csr_global_int_en_o),.int_addr_o(clint_int_addr_o),.int_assert_o(clint_int_assert_o));
 
 ```
@@ -202,7 +195,7 @@ tinyriscv_soc_top.v 结构分析
     // spi模块例化
     spi spi_0(.clk(clk),.rst(rst),.data_i(s5_data_o),.addr_i(s5_addr_o),.we_i(s5_we_o),.data_o(s5_data_i),.spi_mosi(spi_mosi),.spi_miso(spi_miso),.spi_ss(spi_ss),.spi_clk(spi_clk));
 
-    // RISC-V Internal Bus 使用case根据优先级连接输入输出端口
+    // RISC-V Internal Bus
     rib u_rib(.clk(clk),.rst(rst),
 
         // master 0 interface
@@ -255,37 +248,15 @@ tinyriscv_soc_top.v 结构分析
 条件覆盖率为2/3是一条|语句未完全判断   
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181457512-4f16c88f-fdc1-4e64-82c8-293ece9af197.png)
 rst，jump，hold，inst addr 均为100%；   
-##### regs 通用寄存器
+#### regs 通用寄存器
 测试了优先级判断，寄存器读写（含零寄存器5'b0），jtag的寄存器读写操作     
 结果比较方法：`result = (get_actual.jdata===tmp_tran.jdata)&&(get_actual.data===tmp_tran.data);//包含不定态，要用===`    
-测试结果：  `Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
+测试结果： ` Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
 代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703091-bf25ec7c-761f-4cbc-8db5-5bb461f02319.png)
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
-##### tiny_cpu
-只测试指令执行和pc跳转功能 有两种思路：    
-1.在transaction中直接生成随机指令      
-会生成大量非法指令，很难达到覆盖率要求，例如使用15000条随机指令，代码覆盖率仅有60%，状态机覆盖率更是只有35%，所以有必要开发一个随机指令合法生成平台    
-![image](https://user-images.githubusercontent.com/41823230/183327205-f30a2a0d-5ee2-4a75-a484-a86c5466f040.png)
-
-2.搭建随机指令生成平台
-使用instr_gen平台生成可配置的指令流，包括RV32im全部55条指令，可配置各种指令的占比。     
-使用指令生成平台控制指令，仅产生1500条指令便可达到很高的覆盖率(各指令权重均为1)：    
-![image](https://user-images.githubusercontent.com/41823230/183412675-306e3ea0-17c3-4356-a007-36dc32dbd996.png)
-![image](https://user-images.githubusercontent.com/41823230/183412741-4b408ed2-fb06-4381-9f78-b77e2cd43923.png)
-仅测试add指令：   
-
-![image](https://user-images.githubusercontent.com/41823230/183413368-2f2e47cb-6bf6-4d0a-8fd7-6bd0e6afcc2d.png)
 
 
 #### bus部分
-##### rib总线
-
-##### ram
-##### rom
-##### spi
-##### gpio
-##### timer
-##### uart
 
 
 

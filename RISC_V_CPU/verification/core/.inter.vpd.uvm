@@ -1,0 +1,546 @@
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.recording_detail' (type logic signed[4095:0]) read by uvm_test_top = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.recording_detail' (type int) read by uvm_test_top = null (failed lookup)
+#0 in top_tb at top_tb.sv:116
+@ 0: [CFGDB/SET] Configuration 'uvm_test_top.env.i_agt.drv.vif' (type virtual interface my_if) set by  = (virtual interface my_if) ?
+#0 in top_tb at top_tb.sv:117
+@ 0: [CFGDB/SET] Configuration 'uvm_test_top.env.i_agt.mon.vif' (type virtual interface my_if) set by  = (virtual interface my_if) ?
+#0 in top_tb at top_tb.sv:118
+@ 0: [CFGDB/SET] Configuration 'uvm_test_top.env.o_agt.mon.vif' (type virtual interface my_if) set by  = (virtual interface my_if) ?
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common' (id=173) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'common' (id=173) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'common.build' (id=191) Scheduled from phase common
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common.build' (id=191) Starting phase
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.recording_detail' (type int) read by uvm_test_top.env = null (failed lookup)
+#0 in \my_case1::build_phase  at my_case1.sv:41
+@ 0: [CFGDB/SET] Configuration 'uvm_test_top.env.i_agt.sqr.main_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) set by uvm_test_top = (class uvm_pkg::uvm_object_wrapper) ?
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.recording_detail' (type int) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.recording_detail' (type int) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.recording_detail' (type int) read by uvm_test_top.env.mdl = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.scb = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.recording_detail' (type int) read by uvm_test_top.env.scb = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_export.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_peek_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_peek_export.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_peek_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_ap.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.put_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_ap.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.get_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.analysis_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.analysis_export.recording_detail' (type int) read by uvm_test_top.env.agt_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_scb_fifo.analysis_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_export.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo.put_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_peek_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_peek_export.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_peek_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_ap.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo.put_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.put_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_ap.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo.get_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.get_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.analysis_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.analysis_export.recording_detail' (type int) read by uvm_test_top.env.agt_mdl_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.agt_mdl_fifo.analysis_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.agt_mdl_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_export.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_peek_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_peek_export.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_peek_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_ap.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.put_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_ap.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.get_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.analysis_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.analysis_export.recording_detail' (type int) read by uvm_test_top.env.mdl_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl_scb_fifo.analysis_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl_scb_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:60
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.is_active' (type enum uvm_pkg::uvm_active_passive_enum) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:62
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.is_active' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:66
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.is_active' (type bit) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:70
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.is_active' (type int) read by uvm_test_top.env.i_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.rsp_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.rsp_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.rsp_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.rsp_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.rsp_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.rsp_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.sqr_rsp_analysis_fifo.analysis_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.req_fifo = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_peek_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_ap.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.put_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.put_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_ap.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.req_fifo.get_ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.req_fifo.get_ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.seq_item_export.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.seq_item_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.seq_item_export.recording_detail' (type int) read by uvm_test_top.env.i_agt.sqr.seq_item_export = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_sqr_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.seq_item_export.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr.seq_item_export = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.drv = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.recording_detail' (type int) read by uvm_test_top.env.i_agt.drv = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.seq_item_port.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.drv.seq_item_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.seq_item_port.recording_detail' (type int) read by uvm_test_top.env.i_agt.drv.seq_item_port = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_sqr_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.seq_item_port.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.drv.seq_item_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.rsp_port.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.drv.rsp_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.rsp_port.recording_detail' (type int) read by uvm_test_top.env.i_agt.drv.rsp_port = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.rsp_port.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.drv.rsp_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.mon = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.recording_detail' (type int) read by uvm_test_top.env.i_agt.mon = null (failed lookup)
+#0 in \my_driver::build_phase  at my_driver.sv:17
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.drv.vif' (type virtual interface my_if) read by uvm_test_top.env.i_agt.drv = (virtual interface my_if) ?
+#0 in \my_monitor::build_phase  at my_monitor.sv:16
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.vif' (type virtual interface my_if) read by uvm_test_top.env.i_agt.mon = (virtual interface my_if) ?
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.mon.ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.ap.recording_detail' (type int) read by uvm_test_top.env.i_agt.mon.ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.mon.ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.mon.ap = null (failed lookup)
+#0 in \uvm_sequencer_base::build  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:476
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.default_sequence' (type string) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::build  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:481
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.count' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::build  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:485
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.max_random_count' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::build  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:489
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.max_random_depth' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::build  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:494
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pound_zero_count' (type logic signed[4095:0]) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.port.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl.port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.port.recording_detail' (type int) read by uvm_test_top.env.mdl.port = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.port.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl.port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.mdl.ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.ap.recording_detail' (type int) read by uvm_test_top.env.mdl.ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.mdl.ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.mdl.ap = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:60
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.is_active' (type enum uvm_pkg::uvm_active_passive_enum) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:62
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.is_active' (type logic signed[4095:0]) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:66
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.is_active' (type bit) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_agent::build_phase  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/comps/uvm_agent.svh:70
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.is_active' (type int) read by uvm_test_top.env.o_agt = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.o_agt.mon = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.recording_detail' (type int) read by uvm_test_top.env.o_agt.mon = null (failed lookup)
+#0 in \my_monitor::build_phase  at my_monitor.sv:16
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.vif' (type virtual interface my_if) read by uvm_test_top.env.o_agt.mon = (virtual interface my_if) ?
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.ap.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.o_agt.mon.ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.ap.recording_detail' (type int) read by uvm_test_top.env.o_agt.mon.ap = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.o_agt.mon.ap.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.o_agt.mon.ap = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.exp_port.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.scb.exp_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.exp_port.recording_detail' (type int) read by uvm_test_top.env.scb.exp_port = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.exp_port.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.scb.exp_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1874
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.act_port.recording_detail' (type logic signed[4095:0]) read by uvm_test_top.env.scb.act_port = null (failed lookup)
+#0 in \uvm_component::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_component.svh:1875
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.act_port.recording_detail' (type int) read by uvm_test_top.env.scb.act_port = null (failed lookup)
+#0 in \uvm_port_base#(uvm_pkg::uvm_tlm_if_base#($unit::my_transaction,$unit::my_transaction))::new  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_port_base.svh:243
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.scb.act_port.check_connection_relationships' (type logic signed[4095:0]) read by uvm_test_top.env.scb.act_port = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'common.build' (id=191) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'common.connect' (id=203) Scheduled from phase common.build
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common.connect' (id=203) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'common.connect' (id=203) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'common.end_of_elaboration' (id=215) Scheduled from phase common.connect
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common.end_of_elaboration' (id=215) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'common.end_of_elaboration' (id=215) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'common.start_of_simulation' (id=227) Scheduled from phase common.end_of_elaboration
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common.start_of_simulation' (id=227) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'common.start_of_simulation' (id=227) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'common.run' (id=239) Scheduled from phase common.start_of_simulation
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'common.run' (id=239) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm' (id=288) Scheduled from phase common.start_of_simulation
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm' (id=288) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.run_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.run_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm' (id=288) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched' (id=300) Scheduled from phase uvm
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched' (id=300) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched' (id=300) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.pre_reset' (id=318) Scheduled from phase uvm.uvm_sched
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.pre_reset' (id=318) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_reset_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_reset_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.pre_reset' (id=318) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'common.run' (id=239) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.pre_reset' (id=318) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.reset' (id=330) Scheduled from phase uvm.uvm_sched.pre_reset
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.reset' (id=330) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.reset_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.reset_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.reset' (id=330) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.reset' (id=330) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.post_reset' (id=342) Scheduled from phase uvm.uvm_sched.reset
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.post_reset' (id=342) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_reset_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_reset_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.post_reset' (id=342) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.post_reset' (id=342) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.pre_configure' (id=354) Scheduled from phase uvm.uvm_sched.post_reset
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.pre_configure' (id=354) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_configure_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_configure_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.pre_configure' (id=354) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.pre_configure' (id=354) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.configure' (id=366) Scheduled from phase uvm.uvm_sched.pre_configure
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.configure' (id=366) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.configure_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.configure_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.configure' (id=366) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.configure' (id=366) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.post_configure' (id=378) Scheduled from phase uvm.uvm_sched.configure
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.post_configure' (id=378) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_configure_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_configure_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.post_configure' (id=378) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.post_configure' (id=378) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.pre_main' (id=390) Scheduled from phase uvm.uvm_sched.post_configure
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.pre_main' (id=390) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_main_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_main_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.pre_main' (id=390) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/DONE] Phase 'uvm.uvm_sched.pre_main' (id=390) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.main' (id=402) Scheduled from phase uvm.uvm_sched.pre_main
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 0: [PH/TRC/STRT] Phase 'uvm.uvm_sched.main' (id=402) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.main_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 0: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.main_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = (class uvm_pkg::uvm_object_wrapper) ?
+#0 in \case1_sequence::body  at my_case1.sv:14
+@ 0: [OBJTN_TRC] uvm.uvm_sched.main Object uvm_test_top.env.i_agt.sqr.case1_sequence raised 1 objection(s): count=1  total=1
+#0 in \case1_sequence::body  at my_case1.sv:21
+@ 20170000: [OBJTN_TRC] uvm.uvm_sched.main Object uvm_test_top.env.i_agt.sqr.case1_sequence dropped 1 objection(s): count=0  total=0
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:347
+@ 20170000: [OBJTN_TRC] uvm.uvm_sched.main Object uvm_test_top.env.i_agt.sqr.case1_sequence all_dropped 1 objection(s): count=0  total=0
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched.main' (id=402) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.post_main' (id=414) Scheduled from phase uvm.uvm_sched.main
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_sched.post_main' (id=414) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_main_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_main_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.post_main' (id=414) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched.post_main' (id=414) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.pre_shutdown' (id=426) Scheduled from phase uvm.uvm_sched.post_main
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_sched.pre_shutdown' (id=426) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_shutdown_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.pre_shutdown_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.pre_shutdown' (id=426) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched.pre_shutdown' (id=426) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.shutdown' (id=438) Scheduled from phase uvm.uvm_sched.pre_shutdown
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_sched.shutdown' (id=438) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.shutdown_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.shutdown_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.shutdown' (id=438) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched.shutdown' (id=438) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched.post_shutdown' (id=450) Scheduled from phase uvm.uvm_sched.shutdown
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_sched.post_shutdown' (id=450) Starting phase
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1370
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_shutdown_phase.default_sequence' (type class uvm_pkg::uvm_sequence_base) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_sequencer_base::start_phase_sequence  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/seq/uvm_sequencer_base.svh:1373
+@ 20170000: [CFGDB/GET] Configuration 'uvm_test_top.env.i_agt.sqr.post_shutdown_phase.default_sequence' (type class uvm_pkg::uvm_object_wrapper) read by uvm_test_top.env.i_agt.sqr = null (failed lookup)
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SKIP] Phase 'uvm.uvm_sched.post_shutdown' (id=450) No objections raised, skipping phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.run' (id=239) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'common.extract' (id=246) Scheduled from phase common.run
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched.post_shutdown' (id=450) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_sched_end' (id=306) Scheduled from phase uvm.uvm_sched.post_shutdown
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_sched_end' (id=306) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_sched_end' (id=306) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'uvm.uvm_end' (id=294) Scheduled from phase uvm.uvm_sched_end
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'uvm.uvm_end' (id=294) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'uvm.uvm_end' (id=294) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'common.extract' (id=246) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.extract' (id=246) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'common.check' (id=258) Scheduled from phase common.extract
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'common.check' (id=258) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.check' (id=258) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'common.report' (id=270) Scheduled from phase common.check
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'common.report' (id=270) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.report' (id=270) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'common.final' (id=282) Scheduled from phase common.report
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'common.final' (id=282) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.final' (id=282) Completed phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/SCHEDULED] Phase 'common.common_end' (id=179) Scheduled from phase common.final
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/STRT] Phase 'common.common_end' (id=179) Starting phase
+#0 in \uvm_root::run_test  at /home/user/synopsys/vcs/vcs-mx/O-2018.09-SP2/etc/uvm-1.1/base/uvm_root.svh:426
+@ 20170000: [PH/TRC/DONE] Phase 'common.common_end' (id=179) Completed phase
