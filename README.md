@@ -258,7 +258,7 @@ rst，jump，hold，inst addr 均为100%；
 ##### regs 通用寄存器
 测试了优先级判断，寄存器读写（含零寄存器5'b0），jtag的寄存器读写操作     
 结果比较方法：`result = (get_actual.jdata===tmp_tran.jdata)&&(get_actual.data===tmp_tran.data);//包含不定态，要用===`    
-测试结果： ` Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
+测试结果：  `Compare SUCCESSFULLY` ![@`J7BRQXJ5 PO)A_P%@LR3R](https://user-images.githubusercontent.com/41823230/181702991-d1764697-4da9-485b-8bf3-c4d998941783.png)
 代码覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703091-bf25ec7c-761f-4cbc-8db5-5bb461f02319.png)
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
 ##### tiny_cpu
@@ -268,6 +268,14 @@ rst，jump，hold，inst addr 均为100%；
 ![image](https://user-images.githubusercontent.com/41823230/183327205-f30a2a0d-5ee2-4a75-a484-a86c5466f040.png)
 
 2.搭建随机指令生成平台
+使用instr_gen平台生成可配置的指令流，包括RV32im全部55条指令，可配置各种指令的占比。     
+使用指令生成平台控制指令，仅产生1500条指令便可达到很高的覆盖率(各指令权重均为1)：    
+![image](https://user-images.githubusercontent.com/41823230/183412675-306e3ea0-17c3-4356-a007-36dc32dbd996.png)
+![image](https://user-images.githubusercontent.com/41823230/183412741-4b408ed2-fb06-4381-9f78-b77e2cd43923.png)
+仅测试add指令：   
+
+![image](https://user-images.githubusercontent.com/41823230/183413368-2f2e47cb-6bf6-4d0a-8fd7-6bd0e6afcc2d.png)
+
 
 #### bus部分
 ##### rib总线
