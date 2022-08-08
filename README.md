@@ -263,9 +263,11 @@ rst，jump，hold，inst addr 均为100%；
 功能覆盖率：![image](https://user-images.githubusercontent.com/41823230/181703168-842f4638-f1fc-4f5c-b875-53e824166ee4.png)
 ##### tiny_cpu
 只测试指令执行和pc跳转功能 有两种思路：    
-1.在transaction中生成随机指令
+1.在transaction中直接生成随机指令      
+会生成大量非法指令，很难达到覆盖率要求，例如使用15000条随机指令，代码覆盖率仅有60%，状态机覆盖率更是只有35%，所以有必要开发一个随机指令合法生成平台    
+![image](https://user-images.githubusercontent.com/41823230/183327205-f30a2a0d-5ee2-4a75-a484-a86c5466f040.png)
 
-2.搭建随机指令生成平台，生成大量随机指令并保存在bin文件中，再读取文件作为指令
+2.搭建随机指令生成平台
 
 #### bus部分
 ##### rib总线
