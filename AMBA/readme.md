@@ -58,13 +58,95 @@ T1:片选拉低 输入PADDR PWRITE PWDATA； T2：片选拉高 enable拉低后�
 ---
   # AHB    
   ## 简要介绍
-  AMBA AHB是一种适合高性能综合设计的总线接口。功能，包括:•burst传输•单时钟边缘操作•非三态实现•可配置的数据总线宽度•可配置的地址总线宽度
+  AMBA AHB是一种适合高性能综合设计的总线接口。功能，包括:•burst传输•单时钟边缘操作•非三态实现•可配置的数据总线宽度•可配置的地址总线宽度。       
+  可接入 主机 、从机、桥
+  AHB lite  AHB5
   ## 信号描述
+      全局信号：
+            HCLK       时钟
+            HRESETn    复位
+      主机产生的信号：
+            HADDR      地址线 位宽10~64bits 
+            HBUEST     指示burst传输类型  位宽为0/3bits
+            HMASTLOCK  
+            HPROT      保护控制 0/4/7bits
+            HSIZE      传输大小 3bits
+            HNONSEC    提示是否为安全传输
+            HEXCL      指示是否为访问序列
+            HMASTER    主机标识，每个主机唯一，建议0~8bits
+            HTRANS     2bits 指示传输类型：idle busy NONSEQUENTIAL SEQUENTIAL
+            HWDATA     写数据总线 8/16/32/64/128/256/512/1024bits
+            HWSTRB     写频闪
+            HWRITE     传输方向设定，1：写，0：读
+      从机产生的信号：
+            HRDATA     发给多路复用器 读数据总线 8/6/32/64/128/256/512/1024 bits 
+            HREADYOUT  to 多路 1：表示总线上传输完成 0： 延长传输
+            HRESP      发给多路选择器提供关于传输状态的附加信息 0：ok  1：error
+            HEXOKAY    发给多路选择器表示独占传输的成功或失败
+      译码器产生的信号：
+            HSELx      输出到不同从机，监视HREADY判断传输是否可行
+      多路选择器输出信号：
+            HRDATA     由译码器选择，发给主机
+            HREADY     发给主机和从机
+            HRESP      发给主机
+            HEXOKAY    发给主机
   ## 传输
+  ### 基本传输
+  ![image](https://user-images.githubusercontent.com/41823230/186308789-6bb15cc1-4d4b-421d-9c90-ee59535ee814.png)
+传输分为两个阶段：A:地址传输（一个周期）；B:数据传输（可能多个周期，由ready控制）        
+Hwrite 区分读还是写  地址信号无需在数据阶段保持 所以可以流水线控制
+  ### 传输类型
+  HTRANS[1:0]控制传输类型：
+          00: IDLE   表示不需要传输
+          01：BUSY   使得主机能在burst中插入Idle，延迟一个周期传输，只有未定义长度的突发才能将BUSY传输作为突发的最后一个周期，
+          10：NONSEQ 指示单次 或者burst的第一次传输
+          11：SEQ    burst传输连续传输
+  ### 锁定传输
+  主机断言锁定总线，只读写一个地址      
+  ![image](https://user-images.githubusercontent.com/41823230/186326779-8b233170-7870-45e3-9064-112386a51395.png)
+  ### 传输大小
+  HSIZE[2:0]   000: 8   001：16 .... 111: 1024
+  ### 写闪频
+  可选
+  ### burst
+HBURST[2:0]控制burst传输的类型 节拍数由hburst控制，传输大小由hsize控制
+0b000   SINGLE   单传输
+0b001   INCR     未定义长度的递增burst
+0b010   WRAP4    4拍 wrap burst
+0b011   INCR4    4拍 递增 burst
+0b100   WRAP8    8-beat wrapping burst
+0b101   INCR8    8-beat incrementing burst
+0b110   WRAP16   16-beat wrapping burst
+0b111   INCR16   16-beat incrementing burst       
+![image](https://user-images.githubusercontent.com/41823230/186331505-037c7516-c73b-4638-b8da-0c8ddd2bf851.png)
+![image](https://user-images.githubusercontent.com/41823230/186331577-c60685cb-8850-4c5d-b9e5-831d12a4d4d1.png)
+![image](https://user-images.githubusercontent.com/41823230/186331629-5176ff80-e468-49d4-a54b-bccedc017040.png)
+![image](https://user-images.githubusercontent.com/41823230/186331684-d6847ce8-7c07-4653-b66a-2648b7d08a3a.png)
+![image](https://user-images.githubusercontent.com/41823230/186331731-c759c4ee-1494-450b-8af2-31b332ee2452.png)
+![image](https://user-images.githubusercontent.com/41823230/186331858-88cd4704-9faf-4ed9-84ec-2c50ff1dab04.png)
+![image](https://user-images.githubusercontent.com/41823230/186331886-5d85cf24-0487-4b51-9ce8-93ca8f43342a.png)
+![image](https://user-images.githubusercontent.com/41823230/186331910-40ce8521-2f66-4c4a-ae61-e9161d5b18d4.png)
+![image](https://user-images.githubusercontent.com/41823230/186331949-3a861ce5-9291-4f80-9c7a-72b400fabe4f.png)
+![image](https://user-images.githubusercontent.com/41823230/186331973-09c6b32a-cbf9-49bb-93e2-f2071cee5dae.png)
   ## 总线互连
+  ![image](https://user-images.githubusercontent.com/41823230/186332539-da53eebc-d2ad-4daf-bb84-f4453af06069.png)
+  ![image](https://user-images.githubusercontent.com/41823230/186332512-4eb48a6d-ee9b-4ddb-bfe3-51f7eeb98be9.png)
+
   ## 从属响应
+  ![image](https://user-images.githubusercontent.com/41823230/186332645-2868c069-6cf4-48e7-95e1-e9983aa70272.png)
+
   ## 数据总线
-  ## 时钟核复位
-  ## 信号有效
-  ## 原子
+  HWDATA        
+  HRDATA
+  ## 时钟和复位
+  
+  ## 信号有效性
+  必须一直有效：• HTRANS
+• HADDR
+• HSEL
+• HMASTLOCK
+• HREADY
+• HREADYOUT
+• HRESP
+  ## 原子性
   # AXI 
