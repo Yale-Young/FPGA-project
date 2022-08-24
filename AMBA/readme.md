@@ -96,11 +96,11 @@ T1:片选拉低 输入PADDR PWRITE PWDATA； T2：片选拉高 enable拉低后�
 传输分为两个阶段：A:地址传输（一个周期）；B:数据传输（可能多个周期，由ready控制）        
 Hwrite 区分读还是写  地址信号无需在数据阶段保持 所以可以流水线控制
   ### 传输类型
-  HTRANS[1:0]控制传输类型：
-          00: IDLE   表示不需要传输
-          01：BUSY   使得主机能在burst中插入Idle，延迟一个周期传输，只有未定义长度的突发才能将BUSY传输作为突发的最后一个周期，
-          10：NONSEQ 指示单次 或者burst的第一次传输
-          11：SEQ    burst传输连续传输
+    HTRANS[1:0]控制传输类型：
+                00: IDLE   表示不需要传输
+                01：BUSY   使得主机能在burst中插入Idle，延迟一个周期传输，只有未定义长度的突发才能将BUSY传输作为突发的最后一个周期，
+                10：NONSEQ 指示单次 或者burst的第一次传输
+                11：SEQ    burst传输连续传输
   ### 锁定传输
   主机断言锁定总线，只读写一个地址      
   ![image](https://user-images.githubusercontent.com/41823230/186326779-8b233170-7870-45e3-9064-112386a51395.png)
@@ -109,15 +109,15 @@ Hwrite 区分读还是写  地址信号无需在数据阶段保持 所以可以�
   ### 写闪频
   可选
   ### burst
-HBURST[2:0]控制burst传输的类型 节拍数由hburst控制，传输大小由hsize控制
-0b000   SINGLE   单传输
-0b001   INCR     未定义长度的递增burst
-0b010   WRAP4    4拍 wrap burst
-0b011   INCR4    4拍 递增 burst
-0b100   WRAP8    8-beat wrapping burst
-0b101   INCR8    8-beat incrementing burst
-0b110   WRAP16   16-beat wrapping burst
-0b111   INCR16   16-beat incrementing burst       
+    HBURST[2:0]控制burst传输的类型 节拍数由hburst控制，传输大小由hsize控制
+    0b000   SINGLE   单传输
+    0b001   INCR     未定义长度的递增burst
+    0b010   WRAP4    4拍 wrap burst
+    0b011   INCR4    4拍 递增 burst
+    0b100   WRAP8    8-beat wrapping burst
+    0b101   INCR8    8-beat incrementing burst
+    0b110   WRAP16   16-beat wrapping burst
+    0b111   INCR16   16-beat incrementing burst       
 ![image](https://user-images.githubusercontent.com/41823230/186331505-037c7516-c73b-4638-b8da-0c8ddd2bf851.png)
 ![image](https://user-images.githubusercontent.com/41823230/186331577-c60685cb-8850-4c5d-b9e5-831d12a4d4d1.png)
 ![image](https://user-images.githubusercontent.com/41823230/186331629-5176ff80-e468-49d4-a54b-bccedc017040.png)
@@ -150,3 +150,65 @@ HBURST[2:0]控制burst传输的类型 节拍数由hburst控制，传输大小由
 • HRESP
   ## 原子性
   # AXI 
+  ## 简要介绍
+  AXI协议的特点是:它适用于高带宽和低延迟的设计。      
+  •提供高频操作，无需使用复杂的桥架。•该协议可以满足多种组件的接口需求。•它适用于具有高初始访问延迟的内存控制器。•提供了互连架构实现的灵活性。•向后兼容AHB和APB接口。独立的地址/控制和数据阶段。•支持未对齐的数据传输，使用字节频闪。•使用基于突发的交易，只发出起始地址。•独立的读写数据通道，可以提供低成本的直接内存访问(DMA)。•支持发行多个未完成的地址。•支持乱序事务完成。•允许轻松添加注册阶段，提供定时关闭。        
+  AXI架构，五个独立的事务通道：           
+   读地址 AR，  读数据 R 写地址 AW   写数据 W  写响应B
+  ## 信号描述
+    全局信号：
+    ACLK  
+    ARESETn
+    写地址通道信号：
+    AWID
+    AWADDR
+    AWLEN
+    AWSIZE
+    AWBURST
+    AWLOCK
+    AWCACHE
+    AWPROT
+    AWQOS
+    AWREGION
+    AWUSER
+    AWVAILD
+    AWREADY
+    写数据通道信号：
+    WID
+    WDATA
+    WSTRB
+    WLAST
+    WUSER
+    WVAILD
+    WREADY
+    写响应通道信号：
+    BID
+    BRESP
+    BUSER
+    BVAILD
+    BREADY
+    读地址通道信号：
+    ARID
+    ARADDR
+    ARLEN
+    ARBURST
+    ARLOCK
+    ARCACHE
+    ARPROT
+    ARQOS
+    ARRGEION
+    ARUSER
+    ＡＲＶＡＩＬＤ
+    ＡＲＲＥＡＤＹ
+    读数据通道信号：
+    ＲＩＤ
+    ＲＤＡＴＡ
+    ＲＲＥＳＰ
+    ＲＵＳＥＲ
+    ＲＶＡＩＬＤ
+    ＲＲＥＡＤＹ
+  ## 信号接口
+  ## 事务属性
+  ## 事务标识
+  ## AXI时序模型
+  ## 原子访问
